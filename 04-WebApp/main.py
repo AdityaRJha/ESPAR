@@ -25,10 +25,14 @@ from library.video_emotion_recognition import *
 from library.text_emotion_recognition import *
 from library.text_preprocessor import *
 from nltk import *
+import nltk
 from tika import parser
 from werkzeug.utils import secure_filename
 import tempfile
 
+
+#for nltk lookup error uncomment the line of code below.
+#nltk.download('all')
 
 
 # Flask config
@@ -308,7 +312,10 @@ def text_1():
     probas = get_personality(text)[0].tolist()
     
     df_text = pd.read_csv('static/js/db/text.txt', sep=",")
-    df_new = df_text.append(pd.DataFrame([probas], columns=traits))
+    #As of pandas 2.0, append (precedently deprecated) was effectively removed.
+    #You need to use concat instead (for most applications)
+    df_new = pd.concat([df_text, pd.DataFrame([probas], columns=traits)], axis=0)
+    #df_new = df_text.concat(pd.DataFrame([probas], columns=traits))
     df_new.to_csv('static/js/db/text.txt', sep=",", index=False)
     
     perso = {}
@@ -369,13 +376,13 @@ def text_1():
             d.write(line + "," + str(counts[line]) + '\n')
         d.close()
 
-    df_words_co = pd.read_csv('static/js/db/words_common.txt', sep=',', error_bad_lines=False)
+    df_words_co = pd.read_csv('static/js/db/words_common.txt', sep=',', on_bad_lines='skip')
     df_words_co.FREQ = df_words_co.FREQ.apply(pd.to_numeric)
     df_words_co = df_words_co.groupby('WORDS').sum().reset_index()
     df_words_co.to_csv('static/js/db/words_common.txt', sep=",", index=False)
     common_words_others = df_words_co.sort_values(by=['FREQ'], ascending=False)['WORDS'][:15]
 
-    df_words_perso = pd.read_csv('static/js/db/words_perso.txt', sep=',', error_bad_lines=False)
+    df_words_perso = pd.read_csv('static/js/db/words_perso.txt', sep=',', on_bad_lines='skip')
     common_words_perso = df_words_perso.sort_values(by=['FREQ'], ascending=False)['WORDS'][:15]
 
     return render_template('text_dash.html', traits = probas, trait = trait, trait_others = trait_others, probas_others = probas_others, num_words = num_words, common_words = common_words_perso, common_words_others=common_words_others)
@@ -395,7 +402,8 @@ def text_pdf():
     probas = get_personality(text)[0].tolist()
     
     df_text = pd.read_csv('static/js/db/text.txt', sep=",")
-    df_new = df_text.append(pd.DataFrame([probas], columns=traits))
+    df_new = pd.concat([df_text, pd.DataFrame([probas], columns=traits)], axis=0)
+    #df_new = df_text.append(pd.DataFrame([probas], columns=traits))
     df_new.to_csv('static/js/db/text.txt', sep=",", index=False)
     
     perso = {}
@@ -426,7 +434,7 @@ def text_pdf():
     df_mean.columns = ['Trait', 'Value']
     
     df_mean.to_csv('static/js/db/text_mean.txt', sep=',', index=False)
-    trait_others = df_mean.ix[df_mean['Value'].idxmax()]['Trait']
+    trait_others = df_mean.loc[df_mean['Value'].idxmax()]['Trait']
     
     probas = [int(e*100) for e in probas]
     
@@ -456,13 +464,13 @@ def text_pdf():
             d.write(line + "," + str(counts[line]) + '\n')
         d.close()
 
-    df_words_co = pd.read_csv('static/js/db/words_common.txt', sep=',', error_bad_lines=False)
+    df_words_co = pd.read_csv('static/js/db/words_common.txt', sep=',', on_bad_lines='skip')
     df_words_co.FREQ = df_words_co.FREQ.apply(pd.to_numeric)
     df_words_co = df_words_co.groupby('WORDS').sum().reset_index()
     df_words_co.to_csv('static/js/db/words_common.txt', sep=",", index=False)
     common_words_others = df_words_co.sort_values(by=['FREQ'], ascending=False)['WORDS'][:15]
 
-    df_words_perso = pd.read_csv('static/js/db/words_perso.txt', sep=',', error_bad_lines=False)
+    df_words_perso = pd.read_csv('static/js/db/words_perso.txt', sep=',', on_bad_lines='skip')
     common_words_perso = df_words_perso.sort_values(by=['FREQ'], ascending=False)['WORDS'][:15]
 
     return render_template('text_dash.html', traits = probas, trait = trait, trait_others = trait_others, probas_others = probas_others, num_words = num_words, common_words = common_words_perso, common_words_others=common_words_others)
