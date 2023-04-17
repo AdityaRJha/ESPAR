@@ -237,7 +237,7 @@ facial,4.0
 far,2.0
 fatality,2.0
 favourable,4.0
-feel,7.0
+feel,8.0
 field,10.0
 finance,6.0
 financial,16.0
@@ -459,6 +459,7 @@ outlook,4.0
 outside,8.0
 outstanding,4.0
 overall,4.0
+overwhelm,1.0
 p,4.0
 paris,14.0
 paristech,6.0

@@ -476,4 +476,8 @@ def text_pdf():
     return render_template('text_dash.html', traits = probas, trait = trait, trait_others = trait_others, probas_others = probas_others, num_words = num_words, common_words = common_words_perso, common_words_others=common_words_others)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #For the live server where non-local connection can access it.
+    #to access this, use this ip address http://192.168.1.6:5000/
+    app.run(host="192.168.1.6", port=5000, debug=True)
+    #To run this local uncomment the below line.
+    #app.run(debug=True)
