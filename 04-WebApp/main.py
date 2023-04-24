@@ -478,6 +478,6 @@ def text_pdf():
 if __name__ == '__main__':
     #For the live server where non-local connection can access it.
     #to access this, use this ip address http://192.168.1.6:5000/
-    app.run(host="192.168.1.6", port=5000, debug=True)
+    #app.run(host="192.168.1.6", port=5000, debug=True)
     #To run this local uncomment the below line.
-    #app.run(debug=True)
+    app.run(debug=True)
