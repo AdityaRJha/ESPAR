@@ -1,7 +1,7 @@
 WORDS,FREQ
 0,2.0
 1,2.0
-10,24.0
+10,25.0
 16,2.0
 2,2.0
 20,2.0
@@ -56,7 +56,7 @@ apart,2.0
 application,16.0
 apply,6.0
 appropriate,2.0
-apps,24.0
+apps,25.0
 april,2.0
 art,2.0
 article,4.0
@@ -101,7 +101,7 @@ ch,2.0
 challenge,4.0
 challenging,4.0
 chance,4.0
-charge,26.0
+charge,27.0
 choose,2.0
 city,4.0
 clarification,2.0
@@ -177,8 +177,8 @@ description,2.0
 detection,2.0
 deutsche,30.0
 develop,8.0
-developer,48.0
-development,26.0
+developer,50.0
+development,27.0
 different,8.0
 difficulty,2.0
 digital,2.0
@@ -194,7 +194,7 @@ doctorate,2.0
 document,2.0
 docx,2.0
 doubt,2.0
-downloaded,24.0
+downloaded,25.0
 draw,4.0
 duality,4.0
 duty,2.0
@@ -258,7 +258,7 @@ french,2.0
 fully,2.0
 g,2.0
 gain,4.0
-game,48.0
+game,50.0
 generale,4.0
 genetics,2.0
 geneva,2.0
@@ -276,12 +276,12 @@ graduate,14.0
 graph,8.0
 gratify,4.0
 great,2.0
-group,28.0
+group,29.0
 growth,6.0
 guideline,2.0
 gynecology,2.0
-handle,26.0
-happy,28.0
+handle,27.0
+happy,29.0
 hard,6.0
 health,1.0
 hear,2.0
@@ -316,7 +316,7 @@ increase,3.0
 increasingly,2.0
 incredible,2.0
 individual,4.0
-individually,24.0
+individually,25.0
 information,4.0
 infrastructure,2.0
 innovate,2.0
@@ -340,7 +340,7 @@ interview,4.0
 intrinsic,4.0
 introduce,2.0
 involve,4.0
-io,32.0
+io,33.0
 j,2.0
 job,8.0
 join,8.0
@@ -358,7 +358,7 @@ land,2.0
 landmark,2.0
 language,2.0
 large,2.0
-lately,24.0
+lately,25.0
 launch,2.0
 lausanne,8.0
 lead,6.0
@@ -374,7 +374,7 @@ let,2.0
 letter,22.0
 letterpe,2.0
 lettersummer,2.0
-lettrepe,12.0
+lettrepe,13.0
 level,2.0
 leverage,2.0
 life,2.0
@@ -416,10 +416,10 @@ mine,2.0
 minute,2.0
 miss,2.0
 mistake,2.0
-mobile,24.0
+mobile,25.0
 model,2.0
 modeling,2.0
-monitor,24.0
+monitor,25.0
 month,8.0
 motivate,2.0
 move,6.0
@@ -454,7 +454,7 @@ opportunity,16.0
 orchestra,4.0
 order,4.0
 otcex,4.0
-outcome,28.0
+outcome,29.0
 outlook,4.0
 outside,8.0
 outstanding,4.0
@@ -464,7 +464,7 @@ p,4.0
 paris,14.0
 paristech,6.0
 park,1.0
-part,34.0
+part,35.0
 particular,4.0
 passion,4.0
 past,2.0
@@ -499,8 +499,8 @@ profession,4.0
 professional,4.0
 program,4.0
 programme,4.0
-progress,28.0
-project,88.0
+progress,29.0
+project,91.0
 promising,4.0
 provide,6.0
 public,2.0
@@ -570,7 +570,7 @@ short,2.0
 show,4.0
 showcase,2.0
 side,2.0
-since,33.0
+since,34.0
 sincerely,8.0
 sir,6.0
 sit,2.0
@@ -581,7 +581,7 @@ skill,13.0
 societe,4.0
 sound,2.0
 space,2.0
-speak,24.0
+speak,25.0
 speaker,2.0
 special,2.0
 specific,4.0
@@ -609,12 +609,12 @@ synergy,4.0
 synonymous,2.0
 system,2.0
 tackle,2.0
-take,36.0
+take,37.0
 talented,4.0
 task,2.0
 taste,4.0
 teach,8.0
-team,60.0
+team,62.0
 technical,4.0
 technicality,4.0
 technique,2.0
@@ -634,9 +634,9 @@ three,4.0
 thrill,4.0
 throughout,4.0
 thus,6.0
-time,36.0
+time,37.0
 tool,2.0
-top,24.0
+top,25.0
 topic,2.0
 trade,4.0
 trading,12.0
@@ -669,7 +669,7 @@ welcome,2.0
 well,8.0
 willing,4.0
 word,2.0
-work,79.0
+work,80.0
 working,2.0
 worry,1.0
 would,18.0
